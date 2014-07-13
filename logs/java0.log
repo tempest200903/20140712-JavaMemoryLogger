@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481339</millis>
+  <sequence>0</sequence>
+  <logger>com.example.App</logger>
+  <level>INFO</level>
+  <class>com.example.App</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>begin</message>
+</record>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481382</millis>
+  <sequence>1</sequence>
+  <logger>com.logger.MemoryLogger</logger>
+  <level>INFO</level>
+  <class>com.logger.MemoryLogger</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>0 used:{3897024}</message>
+</record>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481412</millis>
+  <sequence>2</sequence>
+  <logger>com.logger.MemoryLogger</logger>
+  <level>INFO</level>
+  <class>com.logger.MemoryLogger</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>1 used:{17913920}</message>
+</record>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481436</millis>
+  <sequence>3</sequence>
+  <logger>com.logger.MemoryLogger</logger>
+  <level>INFO</level>
+  <class>com.logger.MemoryLogger</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>2 used:{32534976}</message>
+</record>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481459</millis>
+  <sequence>4</sequence>
+  <logger>com.logger.MemoryLogger</logger>
+  <level>INFO</level>
+  <class>com.logger.MemoryLogger</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>3 used:{47164360}</message>
+</record>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481483</millis>
+  <sequence>5</sequence>
+  <logger>com.logger.MemoryLogger</logger>
+  <level>INFO</level>
+  <class>com.logger.MemoryLogger</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>4 used:{61806240}</message>
+</record>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481504</millis>
+  <sequence>6</sequence>
+  <logger>com.logger.MemoryLogger</logger>
+  <level>INFO</level>
+  <class>com.logger.MemoryLogger</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>5 used:{15606816}</message>
+</record>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481516</millis>
+  <sequence>7</sequence>
+  <logger>com.logger.MemoryLogger</logger>
+  <level>INFO</level>
+  <class>com.logger.MemoryLogger</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>6 used:{29623712}</message>
+</record>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481527</millis>
+  <sequence>8</sequence>
+  <logger>com.logger.MemoryLogger</logger>
+  <level>INFO</level>
+  <class>com.logger.MemoryLogger</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>7 used:{44097392}</message>
+</record>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481539</millis>
+  <sequence>9</sequence>
+  <logger>com.logger.MemoryLogger</logger>
+  <level>INFO</level>
+  <class>com.logger.MemoryLogger</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>8 used:{58842920}</message>
+</record>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481562</millis>
+  <sequence>10</sequence>
+  <logger>com.logger.MemoryLogger</logger>
+  <level>INFO</level>
+  <class>com.logger.MemoryLogger</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>9 used:{12113192}</message>
+</record>
+<record>
+  <date>2014-07-13T14:48:01</date>
+  <millis>1405230481573</millis>
+  <sequence>11</sequence>
+  <logger>com.example.App</logger>
+  <level>INFO</level>
+  <class>com.example.App</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>end</message>
+</record>
+</log>
