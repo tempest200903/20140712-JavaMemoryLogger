@@ -12,14 +12,17 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.math.NumberUtils;
 
 import com.google.common.primitives.Longs;
 
 public class MemoryReport {
 
 	public static void main(String[] args) throws IOException {
-		new MemoryReport().makeReport();
+		MemoryReport memoryReport = new MemoryReport();
+		memoryReport.makeReport();
+		System.out.println("reportOutputDirectory is "
+				+ memoryReport.reportOutputDirectory);
+
 	}
 
 	File reportOutputDirectory = new File("target/site/memoryreport");
@@ -71,7 +74,6 @@ public class MemoryReport {
 				Matcher m = p.matcher(line);
 				if (m.matches()) {
 					String value = m.group(1);
-					// System.out.println(value);
 					memoryData.add(Long.valueOf(value));
 				}
 			}

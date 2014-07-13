@@ -4,13 +4,10 @@
 <meta charset="utf-8">
 <title>D3 Test</title>
 <script type="text/javascript" src="d3/d3.js"></script>
-<style type="text/css">
-</style>
 </head>
 <body>
 	<script type="text/javascript">
-		var dataset = [ 3897024, 17913920, 32534976, 47164360, 61806240,
-				15606816, 29623712, 44097392, 58842920, 12113192 ];
+var dataset = [ 3900712, 18107336, 32581016, 47196520, 61817576, 15642944, 29659840, 44163000, 58899456, 12128192];
 		var w = 500;
 		var h = 500;
 		var barPadding = 1;
@@ -28,26 +25,21 @@
 		}).attr("width", w / dataset.length - barPadding).attr("height",
 				function(d) {
 					return d * scale; // データの値そのもの
-				})
-		// .attr("fill", "teal")
-		.attr("fill", function(d) {
+				}).attr("fill", function(d) {
 			return "rgb(0, 0, " + (d * 10) + ")";
 		})
 
 		svg.selectAll("text").data(dataset).enter().append("text").attr(
 				"x",
 				function(d, i) {
-					// return i * (w / dataset.length) + 5;  // +5
 					return i * (w / dataset.length)
 							+ (w / dataset.length - barPadding) / 2;
 				}).attr("y", function(d) {
-			// return h - (d * scale) + 15;              // +15
 			return h - (d * scale) + 14; // 15 を 14 に
 		}).text(function(d) {
 			return d;
 		}).attr("font-family", "sans-serif").attr("font-size", "11px").attr(
 				"fill", "white").attr("text-anchor", "middle");
 	</script>
-	<div></div>
 </body>
 </html>
