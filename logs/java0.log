@@ -2,8 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407334</millis>
+  <date>2014-07-13T20:46:10</date>
+  <millis>1405251970970</millis>
   <sequence>0</sequence>
   <logger>com.example.App</logger>
   <level>INFO</level>
@@ -13,118 +13,118 @@
   <message>begin</message>
 </record>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407377</millis>
+  <date>2014-07-13T20:46:11</date>
+  <millis>1405251971015</millis>
   <sequence>1</sequence>
   <logger>com.logger.MemoryLogger</logger>
   <level>INFO</level>
   <class>com.logger.MemoryLogger</class>
   <method>log</method>
   <thread>1</thread>
-  <message>0 used:{3900712}</message>
+  <message>0 section:{section0}, used:{3900712}</message>
 </record>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407400</millis>
+  <date>2014-07-13T20:46:11</date>
+  <millis>1405251971040</millis>
   <sequence>2</sequence>
   <logger>com.logger.MemoryLogger</logger>
   <level>INFO</level>
   <class>com.logger.MemoryLogger</class>
   <method>log</method>
   <thread>1</thread>
-  <message>1 used:{18107336}</message>
+  <message>1 section:{section0}, used:{18107336}</message>
 </record>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407416</millis>
+  <date>2014-07-13T20:46:11</date>
+  <millis>1405251971058</millis>
   <sequence>3</sequence>
   <logger>com.logger.MemoryLogger</logger>
   <level>INFO</level>
   <class>com.logger.MemoryLogger</class>
   <method>log</method>
   <thread>1</thread>
-  <message>2 used:{32581016}</message>
+  <message>2 section:{section0}, used:{32581016}</message>
 </record>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407431</millis>
+  <date>2014-07-13T20:46:11</date>
+  <millis>1405251971077</millis>
   <sequence>4</sequence>
   <logger>com.logger.MemoryLogger</logger>
   <level>INFO</level>
   <class>com.logger.MemoryLogger</class>
   <method>log</method>
   <thread>1</thread>
-  <message>3 used:{47196520}</message>
+  <message>3 section:{section1}, used:{47196520}</message>
 </record>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407447</millis>
+  <date>2014-07-13T20:46:11</date>
+  <millis>1405251971095</millis>
   <sequence>5</sequence>
   <logger>com.logger.MemoryLogger</logger>
   <level>INFO</level>
   <class>com.logger.MemoryLogger</class>
   <method>log</method>
   <thread>1</thread>
-  <message>4 used:{61817576}</message>
+  <message>4 section:{section1}, used:{61817576}</message>
 </record>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407463</millis>
+  <date>2014-07-13T20:46:11</date>
+  <millis>1405251971115</millis>
   <sequence>6</sequence>
   <logger>com.logger.MemoryLogger</logger>
   <level>INFO</level>
   <class>com.logger.MemoryLogger</class>
   <method>log</method>
   <thread>1</thread>
-  <message>5 used:{15642944}</message>
+  <message>5 section:{section1}, used:{15569216}</message>
 </record>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407474</millis>
+  <date>2014-07-13T20:46:11</date>
+  <millis>1405251971128</millis>
   <sequence>7</sequence>
   <logger>com.logger.MemoryLogger</logger>
   <level>INFO</level>
   <class>com.logger.MemoryLogger</class>
   <method>log</method>
   <thread>1</thread>
-  <message>6 used:{29659840}</message>
+  <message>6 section:{section2}, used:{29586112}</message>
 </record>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407486</millis>
+  <date>2014-07-13T20:46:11</date>
+  <millis>1405251971142</millis>
   <sequence>8</sequence>
   <logger>com.logger.MemoryLogger</logger>
   <level>INFO</level>
   <class>com.logger.MemoryLogger</class>
   <method>log</method>
   <thread>1</thread>
-  <message>7 used:{44163000}</message>
+  <message>7 section:{section2}, used:{44097288}</message>
 </record>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407499</millis>
+  <date>2014-07-13T20:46:11</date>
+  <millis>1405251971155</millis>
   <sequence>9</sequence>
   <logger>com.logger.MemoryLogger</logger>
   <level>INFO</level>
   <class>com.logger.MemoryLogger</class>
   <method>log</method>
   <thread>1</thread>
-  <message>8 used:{58899456}</message>
+  <message>8 section:{section2}, used:{58836216}</message>
 </record>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407519</millis>
+  <date>2014-07-13T20:46:11</date>
+  <millis>1405251971176</millis>
   <sequence>10</sequence>
   <logger>com.logger.MemoryLogger</logger>
   <level>INFO</level>
   <class>com.logger.MemoryLogger</class>
   <method>log</method>
   <thread>1</thread>
-  <message>9 used:{12128192}</message>
+  <message>9 section:{section3}, used:{12063136}</message>
 </record>
 <record>
-  <date>2014-07-13T20:36:47</date>
-  <millis>1405251407532</millis>
+  <date>2014-07-13T20:46:11</date>
+  <millis>1405251971188</millis>
   <sequence>11</sequence>
   <logger>com.example.App</logger>
   <level>INFO</level>

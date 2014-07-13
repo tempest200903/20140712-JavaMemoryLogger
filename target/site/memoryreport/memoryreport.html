@@ -7,7 +7,7 @@
 </head>
 <body>
 	<script type="text/javascript">
-var dataset = [ 3900712, 18107336, 32581016, 47196520, 61817576, 15642944, 29659840, 44163000, 58899456, 12128192];
+var dataset = [ 3900712, 18107336, 32581016, 47196520, 61817576, 15569216, 29586112, 44097288, 58836216, 12063136, 0 ];
 		var w = 500;
 		var h = 500;
 		var barPadding = 1;
@@ -37,7 +37,7 @@ var dataset = [ 3900712, 18107336, 32581016, 47196520, 61817576, 15642944, 29659
 				}).attr("y", function(d) {
 			return h - (d * scale) + 14; // 15 を 14 に
 		}).text(function(d) {
-			return d;
+			return (d / 1000).toFixed(0);
 		}).attr("font-family", "sans-serif").attr("font-size", "11px").attr(
 				"fill", "white").attr("text-anchor", "middle");
 	</script>

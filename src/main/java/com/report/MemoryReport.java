@@ -11,7 +11,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.StringUtils;
 
 import com.google.common.primitives.Longs;
 
@@ -29,15 +28,19 @@ public class MemoryReport {
 
 	File templateDirectory = new File("src/main/resources");
 
-	void createReportFile(List<Long> memoryData) throws IOException {
-		createReportFileHtml(memoryData);
+	void createReportFile(List<MemoryData> memoryDataList) throws IOException {
+		createReportFileHtml(memoryDataList);
 		createReportFileJs();
 	}
 
-	void createReportFileHtml(List<Long> memoryData) throws IOException {
+	void createReportFileHtml(List<MemoryData> memoryDataList)
+			throws IOException {
 		StringBuilder replacement1 = new StringBuilder("var dataset = [ ");
-		replacement1.append(StringUtils.join(memoryData, ", "));
-		replacement1.append("];");
+		for (MemoryData memoryData : memoryDataList) {
+			replacement1.append(memoryData.getUsed());
+			replacement1.append(", ");
+		}
+		replacement1.append("0 ];");
 
 		String regex1 = ".*(var dataset = \\[ 1, 2, 3, 4, 5 \\];).*";
 		Pattern p1 = Pattern.compile(regex1);
@@ -60,8 +63,9 @@ public class MemoryReport {
 		FileUtils.copyDirectory(srcDir, destDir);
 	}
 
-	List<Long> extractMemoryData() throws FileNotFoundException, IOException {
-		List<Long> memoryData = new ArrayList<Long>();
+	List<MemoryData> extractMemoryDataList() throws FileNotFoundException,
+			IOException {
+		List<MemoryData> memoryDataList = new ArrayList<MemoryData>();
 
 		File logFile = new File("logs/java0.log");
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(
@@ -74,20 +78,22 @@ public class MemoryReport {
 				Matcher m = p.matcher(line);
 				if (m.matches()) {
 					String value = m.group(1);
-					memoryData.add(Long.valueOf(value));
+					MemoryData memoryData = new MemoryData();
+					memoryData.setUsed(Long.valueOf(value));
+					memoryDataList.add(memoryData);
 				}
 			}
 
 		} finally {
 			bufferedReader.close();
 		}
-		return memoryData;
+		return memoryDataList;
 	}
 
 	void makeReport() throws IOException {
 		setupOutputDirectory();
-		List<Long> memoryData = extractMemoryData();
-		createReportFile(memoryData);
+		List<MemoryData> memoryDataList = extractMemoryDataList();
+		createReportFile(memoryDataList);
 	}
 
 	void regexSample() throws IOException {

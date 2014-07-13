@@ -27,9 +27,11 @@ public class App {
 	public static void main(String[] args) {
 		myLogger.info("begin");
 		for (int i = 0; i < 10; i++) {
+			memoryLogger.setSection("section" + (i / 3));
 			memoryLogger.log(Level.INFO, String.valueOf(i));
 			consumeMemory();
 		}
 		myLogger.info("end");
 	}
+
 }

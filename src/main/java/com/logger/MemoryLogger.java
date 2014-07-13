@@ -10,11 +10,22 @@ public class MemoryLogger {
 
 	static Logger myLogger = Logger.getLogger(MemoryLogger.class.getName());
 
+	String section;
+
+	public String getSection() {
+		return section;
+	}
+
 	public void log(Level level, String msg) {
 		MemoryMXBean mbean = ManagementFactory.getMemoryMXBean();
 		MemoryUsage heap = mbean.getHeapMemoryUsage();
 		long used = heap.getUsed();
-		myLogger.log(level, msg + " used:{" + used + "}");
+		myLogger.log(level, msg + " section:{" + section + "}, used:{" + used
+				+ "}");
+	}
+
+	public void setSection(String section) {
+		this.section = section;
 	}
 
 }
