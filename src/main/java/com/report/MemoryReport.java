@@ -32,8 +32,6 @@ public class MemoryReport {
 	}
 
 	void createReportFileHtml(List<Long> memoryData) throws IOException {
-		memoryData = normalizeMemoryData(memoryData);
-
 		StringBuilder replacement1 = new StringBuilder("var dataset = [ ");
 		replacement1.append(StringUtils.join(memoryData, ", "));
 		replacement1.append("];");
@@ -88,17 +86,6 @@ public class MemoryReport {
 		setupOutputDirectory();
 		List<Long> memoryData = extractMemoryData();
 		createReportFile(memoryData);
-	}
-
-	List<Long> normalizeMemoryData(List<Long> memoryData) {
-		List<Long> normalizedMemoryData = new ArrayList<Long>();
-		long max = NumberUtils.max(toPrimitiveLongArray(memoryData));
-		for (int i = 0; i < memoryData.size(); i++) {
-			long value = memoryData.get(i);
-			long normalizedValue = value * 500 / 4 / max;
-			normalizedMemoryData.add(normalizedValue);
-		}
-		return normalizedMemoryData;
 	}
 
 	void regexSample() throws IOException {

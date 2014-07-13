@@ -9,10 +9,13 @@
 </head>
 <body>
 	<script type="text/javascript">
-var dataset = [ 7, 36, 65, 95, 125, 31, 59, 89, 119, 24];
+		var dataset = [ 3897024, 17913920, 32534976, 47164360, 61806240,
+				15606816, 29623712, 44097392, 58842920, 12113192 ];
 		var w = 500;
 		var h = 500;
 		var barPadding = 1;
+		var dataMax = Math.max.apply(null, dataset);
+		var scale = 500 / dataMax;
 
 		var svg = d3.select("body").append("svg").attr("width", w).attr(
 				"height", h);
@@ -21,10 +24,10 @@ var dataset = [ 7, 36, 65, 95, 125, 31, 59, 89, 119, 24];
 				function(d, i) {
 					return i * (w / dataset.length);
 				}).attr("y", function(d) {
-			return h - (d * 4); // SVG の高さからデータの値を引く
+			return h - (d * scale); // SVG の高さからデータの値を引く
 		}).attr("width", w / dataset.length - barPadding).attr("height",
 				function(d) {
-					return d * 4; // データの値そのもの
+					return d * scale; // データの値そのもの
 				})
 		// .attr("fill", "teal")
 		.attr("fill", function(d) {
@@ -38,8 +41,8 @@ var dataset = [ 7, 36, 65, 95, 125, 31, 59, 89, 119, 24];
 					return i * (w / dataset.length)
 							+ (w / dataset.length - barPadding) / 2;
 				}).attr("y", function(d) {
-			// return h - (d * 4) + 15;              // +15
-			return h - (d * 4) + 14; // 15 を 14 に
+			// return h - (d * scale) + 15;              // +15
+			return h - (d * scale) + 14; // 15 を 14 に
 		}).text(function(d) {
 			return d;
 		}).attr("font-family", "sans-serif").attr("font-size", "11px").attr(
