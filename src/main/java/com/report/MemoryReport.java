@@ -11,6 +11,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.math.NumberUtils;
+
+import com.google.common.primitives.Longs;
 
 public class MemoryReport {
 
@@ -22,26 +26,28 @@ public class MemoryReport {
 
 	File templateDirectory = new File("src/main/resources");
 
-	void createReportFile(List<Double> memoryData) throws IOException {
+	void createReportFile(List<Long> memoryData) throws IOException {
 		createReportFileHtml(memoryData);
 		createReportFileJs();
 	}
 
-	void createReportFileHtml(List<Double> memoryData) throws IOException {
-		StringBuilder replacement = new StringBuilder(
-				"var dataset = [ 20, 40, 10, 30, 50 ];");
-		StringUtils.join;
+	void createReportFileHtml(List<Long> memoryData) throws IOException {
+		memoryData = normalizeMemoryData(memoryData);
+
+		StringBuilder replacement1 = new StringBuilder("var dataset = [ ");
+		replacement1.append(StringUtils.join(memoryData, ", "));
+		replacement1.append("];");
+
+		String regex1 = ".*(var dataset = \\[ 1, 2, 3, 4, 5 \\];).*";
+		Pattern p1 = Pattern.compile(regex1);
 
 		File templateFile = new File(templateDirectory, "memoryreport.html");
 		File outputFile = new File(reportOutputDirectory, "memoryreport.html");
 		List<String> inputLines = FileUtils.readLines(templateFile);
 		List<String> outputLines = new ArrayList<String>();
 
-		String regex = ".*(var dataset = \\[ 1, 2, 3, 4, 5 \\];).*";
-		Pattern p = Pattern.compile(regex);
 		for (String line : inputLines) {
-			Matcher m = p.matcher(line);
-			line = m.replaceFirst(replacement.toString());
+			line = p1.matcher(line).replaceFirst(replacement1.toString());
 			outputLines.add(line);
 		}
 		FileUtils.writeLines(outputFile, outputLines);
@@ -53,8 +59,8 @@ public class MemoryReport {
 		FileUtils.copyDirectory(srcDir, destDir);
 	}
 
-	List<Double> extractMemoryData() throws FileNotFoundException, IOException {
-		List<Double> memoryData = new ArrayList<Double>();
+	List<Long> extractMemoryData() throws FileNotFoundException, IOException {
+		List<Long> memoryData = new ArrayList<Long>();
 
 		File logFile = new File("logs/java0.log");
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(
@@ -68,7 +74,7 @@ public class MemoryReport {
 				if (m.matches()) {
 					String value = m.group(1);
 					// System.out.println(value);
-					memoryData.add(Double.valueOf(value));
+					memoryData.add(Long.valueOf(value));
 				}
 			}
 
@@ -80,8 +86,19 @@ public class MemoryReport {
 
 	void makeReport() throws IOException {
 		setupOutputDirectory();
-		List<Double> memoryData = extractMemoryData();
+		List<Long> memoryData = extractMemoryData();
 		createReportFile(memoryData);
+	}
+
+	List<Long> normalizeMemoryData(List<Long> memoryData) {
+		List<Long> normalizedMemoryData = new ArrayList<Long>();
+		long max = NumberUtils.max(toPrimitiveLongArray(memoryData));
+		for (int i = 0; i < memoryData.size(); i++) {
+			long value = memoryData.get(i);
+			long normalizedValue = value * 500 / 4 / max;
+			normalizedMemoryData.add(normalizedValue);
+		}
+		return normalizedMemoryData;
 	}
 
 	void regexSample() throws IOException {
@@ -106,6 +123,10 @@ public class MemoryReport {
 
 	void setupOutputDirectory() throws IOException {
 		FileUtils.forceMkdir(reportOutputDirectory);
+	}
+
+	long[] toPrimitiveLongArray(List<Long> list) {
+		return Longs.toArray(list);
 	}
 
 }

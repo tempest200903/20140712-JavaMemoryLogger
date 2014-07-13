@@ -16,4 +16,9 @@
       <attribute value="jar:file:/C:/Users/simei/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/google/guava/guava/17.0/guava-17.0.jar" sourcepath="M2_REPO/com/google/guava/guava/17.0/guava-17.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/simei/.m2/repository/com/google/guava/guava/17.0/guava-17.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
 </classpath>
